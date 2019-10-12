@@ -33,9 +33,12 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
+    "linters": {
+      "src/**/*.{js,css}": [
+        "vue-cli-service lint",
+        "git add"
+      ]
+    },
+    "ignore": ["node_modules", "dist", "package-lock.json"]
   }
 }
