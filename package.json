@@ -28,17 +28,5 @@
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.{js,css}": [
-        "vue-cli-service lint",
-        "git add"
-      ]
-    },
-    "ignore": ["node_modules", "dist", "package-lock.json"]
   }
 }
