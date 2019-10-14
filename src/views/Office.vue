@@ -15,11 +15,12 @@
       </accordion>
       <accordion headline="Flightplan" :initial-open="!!activePlane">
         <flightplan v-if="activePlane" :plane-id="activePlane" />
+        <div v-else>Select a plane first</div>
       </accordion>
     </div>
     <div>
       <h3>Flights</h3>
-      <draggable v-model="unallocatedFlights">
+      <draggable v-model="unallocatedFlights" group="flights">
         <transition-group name="fade">
           <flights-list-item
             v-for="(flight, index) in unallocatedFlights"
