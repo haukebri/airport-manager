@@ -20,7 +20,7 @@
     </div>
     <div>
       <h3>Flights</h3>
-      <draggable v-model="unallocatedFlights" group="flights">
+      <draggable v-model="unallocatedFlights" class="draggable" group="flights">
         <transition-group name="fade">
           <flights-list-item
             v-for="(flight, index) in unallocatedFlights"
@@ -88,6 +88,10 @@ export default {
 
   > div {
     max-height: 50%;
+  }
+  .draggable {
+    background: lightgray;
+    padding: 30px 5px;
   }
 }
 </style>

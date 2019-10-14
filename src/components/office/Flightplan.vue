@@ -11,7 +11,6 @@
           />
         </draggable>
       </div>
-      <div class="second">second</div>
     </div>
   </div>
 </template>
