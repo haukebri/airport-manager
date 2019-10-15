@@ -8,6 +8,7 @@
             v-for="(flight, index) in dayone"
             :flight="flight"
             :key="index"
+            no-details
           />
         </draggable>
       </div>

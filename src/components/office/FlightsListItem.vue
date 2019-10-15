@@ -2,7 +2,7 @@
   <div class="flights-list-item">
     <div class="flight-infos">
       <div class="flight-name">{{ flight.from }} - {{ flight.to }}</div>
-      <div class="flight-details">
+      <div class="flight-details" v-if="!noDetails">
         <span> ${{ flight.reward }} </span>
         <span> P{{ flight.passengers }} </span>
         <span> D{{ flight.distance }}km </span>
@@ -21,6 +21,10 @@ export default {
     flight: {
       required: true,
       type: Object
+    },
+    noDetails: {
+      default: false,
+      type: Boolean
     }
   },
   data() {
