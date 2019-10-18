@@ -30,10 +30,15 @@ const state = {
         attendants: 4
       }
     }
-  ]
+  ],
+  activePlane: null
 };
 const getters = {};
-const mutations = {};
+const mutations = {
+  setActivePlane(state, id) {
+    state.activePlane = id;
+  }
+};
 const actions = {};
 
 export default {

@@ -2,22 +2,11 @@
   <div class="office">
     <div>
       <router-link to="/">zurück</router-link>
-
-      <accordion headline="Planes" :initial-open="!activePlane">
-        <div
-          class="plane-switch"
-          v-for="plane in planes"
-          :key="plane.id"
-          @click="setPlane(plane.id)"
-        >
-          {{ plane.name }}<br />
-        </div>
-      </accordion>
-      <accordion headline="Flightplan" :initial-open="!!activePlane">
-        <flightplan v-if="activePlane" :plane-id="activePlane" />
-        <div v-else>Select a plane first</div>
-      </accordion>
     </div>
+    <div>
+      <router-link to="/office/flightmanager">Open flight manager</router-link>
+    </div>
+    <!--
     <div>
       <h3>Flights</h3>
       <draggable v-model="unallocatedFlights" class="draggable" group="flights">
@@ -30,23 +19,14 @@
         </transition-group>
       </draggable>
     </div>
+    -->
   </div>
 </template>
 
 <script>
-import FlightsListItem from "../components/office/FlightsListItem";
-import Accordion from "../components/office/Accordion";
-import Flightplan from "../components/office/Flightplan";
-import draggable from "vuedraggable";
-
 export default {
   name: "office",
-  components: {
-    FlightsListItem,
-    Accordion,
-    Flightplan,
-    draggable
-  },
+  components: {},
   data() {
     return {
       activePlane: null
