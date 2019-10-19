@@ -1,5 +1,5 @@
 <template>
-  <div class="flights-list-item">
+  <div class="flights-list-item" @click="$emit('click')">
     <div class="flight-infos">
       <div class="flight-name">{{ flight.from }} - {{ flight.to }}</div>
       <div class="flight-details" v-if="!noDetails">

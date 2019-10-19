@@ -1,6 +1,7 @@
 const state = {
   flights: [
     {
+      id: 123,
       from: "Berlinx",
       to: "London",
       passengers: 100,
@@ -10,15 +11,17 @@ const state = {
       plannedStart: null
     },
     {
-      from: "Berliny",
-      to: "London",
+      id: 234,
+      from: "Warschau",
+      to: "New York",
       passengers: 100,
-      distance: 900,
+      distance: 12000,
       reward: 100000,
       allocated: 0,
       plannedStart: null
     },
     {
+      id: 432,
       from: "Berlinc",
       to: "London",
       passengers: 100,
@@ -28,6 +31,7 @@ const state = {
       plannedStart: null
     },
     {
+      id: 848,
       from: "Helsinki",
       to: "New York",
       passengers: 1,
@@ -52,6 +56,12 @@ const mutations = {
       flight => flight.allocated !== 0
     );
     state.flights = flights.concat(allocatedFlights);
+  },
+  allocateFlight(store, { flight, planeId }) {
+    const index = state.flights.findIndex(
+      singleFlight => singleFlight.id === flight.id
+    );
+    state.flights[index].allocated = planeId;
   }
 };
 const actions = {};
