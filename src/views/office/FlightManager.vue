@@ -26,10 +26,8 @@
         v-if="activeView === 'planelist'"
         @click="changeView('flights')"
       />
-      <flightslist
-        v-if="activeView === 'flights'"
-        @click="changeView('planner')"
-      />
+      <flightslist v-if="activeView === 'flights'" />
+      <scheduled-plan v-if="activeView === 'planner'" />
     </div>
   </div>
 </template>
@@ -37,12 +35,14 @@
 <script>
 import Planelist from "@/components/office/Planelist.vue";
 import Flightslist from "@/components/office/Flightslist.vue";
+import ScheduledPlan from "@/components/office/ScheduledPlan.vue";
 
 export default {
   name: "flight-manager",
   components: {
     Planelist,
-    Flightslist
+    Flightslist,
+    ScheduledPlan
   },
   data() {
     return {

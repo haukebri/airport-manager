@@ -14,6 +14,7 @@
 
 <script>
 import FlightsListItem from "@/components/office/FlightsListItem.vue";
+
 export default {
   name: "flightslist",
   components: {

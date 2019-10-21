@@ -62,6 +62,13 @@ const mutations = {
       singleFlight => singleFlight.id === flight.id
     );
     state.flights[index].allocated = planeId;
+  },
+  updatePlanned(store, flights) {
+    const currentId = flights[0].allocated;
+    const withoutCurrent = state.flights.filter(
+      flight => flight.allocated !== currentId
+    );
+    state.flights = withoutCurrent.concat(flights);
   }
 };
 const actions = {};
